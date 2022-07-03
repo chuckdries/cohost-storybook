@@ -165,7 +165,7 @@ const Post = ({
               </svg>
             </button>
             <a
-              href="https://cohost.org/chuck/post/23133-div-style-margin/edit"
+              href="#"
               className="h-6 w-6 text-notBlack"
               title="edit this post"
             >

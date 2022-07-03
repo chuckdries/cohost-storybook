@@ -15,6 +15,10 @@ import "./index.css";
 export interface StoryTemplateProps {
   wrapWithPosts: boolean;
   showHTML: boolean;
+  creatorHandle?: string;
+  creatorDisplayName?: string;
+  creatorProfilePicUrl?: string;
+  originalPostHref?: string;
 }
 
 const TakeUpSpacePost = () => (
@@ -34,6 +38,10 @@ const StoryTemplate = ({
   children,
   wrapWithPosts,
   showHTML,
+  creatorHandle,
+  creatorDisplayName,
+  creatorProfilePicUrl,
+  originalPostHref,
 }: StoryTemplateProps & {
   children: ReactNode;
 }) => {
@@ -168,13 +176,33 @@ const StoryTemplate = ({
         {/* items-center and my-16 and gap-4 added by me (I don't remember where I copy-pasted this from) */}
         <div className="col-span-1 flex flex-col gap-4 lg:col-span-2 items-center my-16">
           {wrapWithPosts && (
-            <Post>
+            <Post
+              creatorDisplayName="Chuck"
+              creatorHandle="chuck"
+              creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+              originalPostHref="#"
+            >
               <TakeUpSpacePost />
             </Post>
           )}
-          <Post>{children}</Post>
+          <Post
+            creatorHandle={creatorHandle || "chuck"}
+            creatorDisplayName={creatorDisplayName || "Chuck"}
+            creatorProfilePicUrl={
+              creatorProfilePicUrl ||
+              "https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+            }
+            originalPostHref={originalPostHref || "#"}
+          >
+            {children}
+          </Post>
           {wrapWithPosts && (
-            <Post>
+            <Post
+              creatorDisplayName="Chuck"
+              creatorHandle="chuck"
+              creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+              originalPostHref="#"
+            >
               <TakeUpSpacePost />
             </Post>
           )}

@@ -4,8 +4,15 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";
 
 const Post = (props: StoryTemplateProps) => (
-  <StoryTemplate {...props}>
-    {/* ----EDIT BELOW HERE---- */}
+  <StoryTemplate
+    // edit metadata as necessary
+    creatorHandle="mog"
+    creatorDisplayName="mogery"
+    creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/445-a2e958d4-372d-45d8-b037-8175bb78b84e-profile.jpg"
+    originalPostHref="https://cohost.org/mog/post/15769-details-summary-s"
+    {...props}
+  >
+    {/* ----EDIT POST BELOW HERE---- */}
     <details>
       <summary
         style={{

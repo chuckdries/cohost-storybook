@@ -20,6 +20,8 @@ yarn storybook
 3. copy-paste `src/stories/Waterfall.stories.tsx` into a new file inside `src/stories`
 4. Use your browser devtools to copy the rendered HTML (I know I know)
 
+View the [Introduction story](https://chuckdries.github.io/cohost-storybook/?path=/story/welcome-introduction--page) for more information
+
 ### Contributing stories
 1. Fork this repo
 2. Push your work to a branch on your fork

@@ -1,28 +1,57 @@
 import { Meta } from "@storybook/addon-docs";
-import { Description } from '@storybook/addon-docs/blocks';
+import { Description } from "@storybook/addon-docs/blocks";
 
 <Meta title="Welcome/Introduction" />
 
 # Welcome
 
-This is my attempt to set up a development environment for working on cohost posts.
+This is my attempt to set up a development environment for working on cohost posts. It's using react because I like react.
 
 ## Dev Workflow
-0. clone this repo and install yarn if you haven't already: 
+
+0. clone this repo and install yarn if you haven't already:
+
 ```sh
 git clone https://github.com/chuckdries/cohost-storybook.git
 cd cohost-storybook
 npm i -g yarn
 ```
-1. install dependencies: 
+
+1. install dependencies:
+
 ```
 yarn
 ```
-2. start storybook: 
+
+2. start storybook:
+
 ```
 yarn storybook
 ```
+
 3. copy-paste `src/stories/Waterfall.stories.tsx` into a new file inside `src/stories`
 4. Use your browser devtools to copy the rendered HTML (I know I know)
 
 See the repo at https://github.com/chuckdries/cohost-storybook for more documentation.
+
+## Helpful notes
+
+This is React, which means we're authoring in JSX, not HTML. There are some subtle differences:
+
+### All tags must close
+
+```jsx
+<img src="..." alt="..." />
+// or
+<img src="..." alt="..."></img>
+```
+### Inline styles are applied as an object, not a string
+```jsx
+<div style="display: block; background: red;" />
+// must be converted to
+<div style={{
+  display: 'block',
+  background: 'red'
+}}
+```
+I found a helpful website you can paste inline style strings into and spits out an inline style object: https://casbin.org/CssToAndFromReact/

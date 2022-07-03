@@ -33,7 +33,7 @@ const imageStyle: CSSProperties = {
 
 const linkStyle = {
   color,
-}
+};
 
 const Post = (props: StoryTemplateProps) => (
   <StoryTemplate {...props}>
@@ -72,7 +72,13 @@ const Post = (props: StoryTemplateProps) => (
           style={{ ...imageStyle }}
         />
       </div>
-      <div style={{ ...imageCardStyle }}>
+      <div
+        style={{
+          ...imageCardStyle,
+          width: "calc(200% - 4em)",
+          aspectRatio: "3/1",
+        }}
+      >
         <img
           src="https://staging.cohostcdn.org/attachment/33b45c24-af2d-492f-bd42-e8538c1ded63/DSC00310.jpg"
           style={{ ...imageStyle }}
@@ -84,8 +90,7 @@ const Post = (props: StoryTemplateProps) => (
           border,
           backgroundColor: "#faf7f3",
         }}
-      >
-      </div>
+      ></div>
       <div
         id="back-cover"
         style={{
@@ -103,7 +108,8 @@ const Post = (props: StoryTemplateProps) => (
             </a>
           </p>
           <p>
-            wallpaper downloads available on <a style={linkStyle} href="https://chuckdries.com">
+            wallpaper downloads available on{" "}
+            <a style={linkStyle} href="https://chuckdries.com">
               chuckdries.com
             </a>
           </p>
@@ -145,7 +151,5 @@ export default {
 
 const Template: ComponentStory<typeof Post> = (args) => <Post {...args} />;
 
-
-export const Story = Template.bind({});
-Story.args = {};
-Story.storyName = "Fixed Width (Beach Blues)" // <-- Edit this
+export const VariableWidth = Template.bind({});
+VariableWidth.args = {};

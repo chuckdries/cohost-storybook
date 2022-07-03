@@ -3,8 +3,9 @@ import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";
 
 const Post = (props: StoryTemplateProps) => (
   <StoryTemplate {...props}>
+    {(ref) => (
     <div
-      id="post" // set an ID to make it easy to find in the devtools
+      ref={ref}
       style={{
         margin: "auto",
         height: "500px",
@@ -22,7 +23,7 @@ const Post = (props: StoryTemplateProps) => (
       >
         Waterfall
       </h1>
-    </div>
+    </div>)}
   </StoryTemplate>
 );
 
@@ -34,6 +35,11 @@ export default {
       name: "Wrap with posts",
       type: "boolean",
       defaultValue: true,
+    },
+    showHTML: {
+      name: "Show HTML",
+      type: "boolean",
+      defaultValue: false,
     },
   },
 } as ComponentMeta<typeof Post>;

@@ -39,7 +39,7 @@ View the [Introduction story](https://chuckdries.github.io/cohost-storybook/?pat
   - [ ] implement large breakpoint preview (profile pics to left of post)
 - [ ] improve `StoryTemplate`
   - [ ] ability to hide the top and bottom space filler posts
-  - [ ] ancillary UI like top nav, sidebars
+  - [ ] ancillary UI like top nav, sidebars (in progress - added top nav)
   - [ ] more precise copy of width/sizing behavior (will want to poke at live site's responsive strategy)(maybe belongs in `Post`?)
 - [ ] improve tailwind config/`index.css`
   - [ ] `mask` and related classes (`mask-squircle` etc)

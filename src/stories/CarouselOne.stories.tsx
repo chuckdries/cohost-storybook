@@ -131,7 +131,7 @@ export default {
     wrapWithPosts: {
       name: "Wrap with posts",
       type: "boolean",
-      defaultValue: true,
+      defaultValue: false,
     },
     showHTML: {
       name: "Show HTML",

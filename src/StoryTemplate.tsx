@@ -176,42 +176,50 @@ const StoryTemplate = ({
           </div>
         </header>
         {/* items-center and my-16 and gap-4 added by me (I don't remember where I copy-pasted this from) */}
-        <div className="col-span-1 flex flex-col gap-4 lg:col-span-2 items-center my-16">
-          {wrapWithPosts && (
-            <Post
-              creatorDisplayName="Chuck"
-              creatorHandle="chuck"
-              creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
-              creatorProfilePicMask="mask-squircle"
-              originalPostHref="#"
-            >
-              <TakeUpSpacePost />
-            </Post>
-          )}
-          <Post
-            creatorHandle={creatorHandle || "chuck"}
-            creatorDisplayName={creatorDisplayName || "Chuck"}
-            creatorProfilePicUrl={
-              creatorProfilePicUrl ||
-              "https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
-            }
-            creatorProfilePicMask={creatorProfilePicMask || ('mask-squircle' as 'mask-squircle')}
-            originalPostHref={originalPostHref || "#"}
-          >
-            {children}
-          </Post>
-          {wrapWithPosts && (
-            <Post
-              creatorDisplayName="Chuck"
-              creatorHandle="chuck"
-              creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
-              creatorProfilePicMask="mask-squircle"
-              originalPostHref="#"
-            >
-              <TakeUpSpacePost />
-            </Post>
-          )}
-        </div>
+
+        <main className="w-full py-16">
+          <div className="container mx-auto grid grid-cols-1 gap-16 lg:grid-cols-4">
+            <div className="cohost-shadow-light dark:cohost-shadow-dark flex h-fit flex-col gap-6 rounded-lg bg-sidebarBg p-6 text-sidebarText">sidebar</div>
+            <div className="col-span-1 flex flex-col gap-12 lg:col-span-2">
+              {wrapWithPosts && (
+                <Post
+                  creatorDisplayName="Chuck"
+                  creatorHandle="chuck"
+                  creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+                  creatorProfilePicMask="mask-squircle"
+                  originalPostHref="#"
+                >
+                  <TakeUpSpacePost />
+                </Post>
+              )}
+              <Post
+                creatorHandle={creatorHandle || "chuck"}
+                creatorDisplayName={creatorDisplayName || "Chuck"}
+                creatorProfilePicUrl={
+                  creatorProfilePicUrl ||
+                  "https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+                }
+                creatorProfilePicMask={
+                  creatorProfilePicMask || ("mask-squircle" as "mask-squircle")
+                }
+                originalPostHref={originalPostHref || "#"}
+              >
+                {children}
+              </Post>
+              {wrapWithPosts && (
+                <Post
+                  creatorDisplayName="Chuck"
+                  creatorHandle="chuck"
+                  creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+                  creatorProfilePicMask="mask-squircle"
+                  originalPostHref="#"
+                >
+                  <TakeUpSpacePost />
+                </Post>
+              )}
+            </div>
+          </div>
+        </main>
       </div>
     </div>
   );

@@ -3,7 +3,7 @@ import StoryTemplate from "./StoryTemplate";
 
 function App() {
   return (
-    <StoryTemplate>
+    <StoryTemplate wrapWithPosts showHTML={false}>
       <div
         style={{
           margin: "auto",

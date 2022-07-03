@@ -4,6 +4,8 @@
 
 A storybook of posts for [cohost!](https://cohost.org), a social network that allows inline styling (and is cool for a number of other reasons !!)
 
+### [Check it out!](https://cohost-storybook.netlify.app/)
+
 ## Usage
 0. clone this repo and install yarn if you haven't already: 
 ```sh
@@ -20,7 +22,8 @@ yarn
 yarn storybook
 ```
 3. copy-paste `src/stories/Waterfall.stories.tsx` into a new file ending in `.stories.tsx` inside `src/stories`
-4. Use the "Show HTML" switch in the "controls" panel to grab the generated HTML for your post!
+4. Edit the post, including the `title` under `export default`, and then select your post in the storybook sidebar
+5. Use the "Show HTML" switch in the "controls" panel to grab the generated HTML for your post!
 
 View the [Introduction story](https://chuckdries.github.io/cohost-storybook/?path=/story/welcome-introduction--page) for more information
 

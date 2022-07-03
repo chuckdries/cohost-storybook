@@ -76,14 +76,14 @@ const Post = (props: StoryTemplateProps) => (
           style={{ ...imageStyle }}
         />
       </div>
-      {/* <div
+      <div
         style={{
           ...cardStyle,
           border,
           backgroundColor: "#faf7f3",
         }}
       >
-      </div> */}
+      </div>
       <div
         id="back-cover"
         style={{

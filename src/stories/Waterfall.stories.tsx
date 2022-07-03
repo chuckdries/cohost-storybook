@@ -3,6 +3,7 @@ import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";
 
 const Post = (props: StoryTemplateProps) => (
   <StoryTemplate {...props}>
+    {/* ----EDIT BELOW HERE---- */}
     <div
       style={{
         margin: "auto",
@@ -22,11 +23,12 @@ const Post = (props: StoryTemplateProps) => (
         Waterfall
       </h1>
     </div>
+    {/* ----EDIT ABOVE HERE---- */}
   </StoryTemplate>
 );
 
 export default {
-  title: "Posts/Waterfall",
+  title: "Posts/Waterfall", // <--- EDIT THIS
   component: Post,
   argTypes: {
     wrapWithPosts: {

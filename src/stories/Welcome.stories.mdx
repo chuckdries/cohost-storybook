@@ -6,6 +6,8 @@ import { Description } from "@storybook/addon-docs/blocks";
 # Welcome
 
 This is my attempt to set up a development environment for working on cohost posts. It's using react because I like react.
+See the repo at https://github.com/chuckdries/cohost-storybook for TODO and contributing documentation.
+
 
 ## Dev Workflow
 
@@ -32,7 +34,8 @@ yarn storybook
 3. copy-paste `src/stories/Waterfall.stories.tsx` into a new file inside `src/stories`
 4. Use your browser devtools to copy the rendered HTML (I know I know)
 
-See the repo at https://github.com/chuckdries/cohost-storybook for more documentation.
+
+> Tip: Toggle the "wrap with posts" control in the bottom panel to enable or disable resizeable posts above and below your post (for testing scrolling effects)
 
 ## React/JSX notes
 
@@ -40,12 +43,18 @@ This is React, which means we're authoring in JSX, not HTML. There are some subt
 
 ### All tags must close
 
+All tags must either end in `/>` or have a corresponding closing tag, including html tags that generally don't need one like `<hr>` and `<img>`
+
 ```jsx
 <img src="..." alt="..." />
 // or
 <img src="..." alt="..."></img>
 ```
+
 ### Inline styles are applied as an object, not a string
+
+See the [react docs](https://reactjs.org/docs/dom-elements.html#style) for more information. I found a helpful website you can paste inline style strings into and spits out an inline style object: https://casbin.org/CssToAndFromReact/
+
 ```jsx
 <div style="display: block; background: red;" />
 // must be converted to
@@ -54,4 +63,4 @@ This is React, which means we're authoring in JSX, not HTML. There are some subt
   background: 'red'
 }}
 ```
-I found a helpful website you can paste inline style strings into and spits out an inline style object: https://casbin.org/CssToAndFromReact/
+

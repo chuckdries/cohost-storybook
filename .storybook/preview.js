@@ -13,9 +13,9 @@ export const parameters = {
     // Set the initial theme
     current: 'dark'
   },
-  // previewTabs: {
-  //   'storybook/docs/panel': {
-  //     hidden: true,
-  //   },
-  // },
+  previewTabs: {
+    'storybook/docs/panel': {
+      hidden: true,
+    },
+  },
 };

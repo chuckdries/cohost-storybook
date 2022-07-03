@@ -26,7 +26,7 @@ yarn storybook
 5. Use the "Show HTML" switch in the "controls" panel to grab the generated HTML for your post!
 6. I recommend saving as a draft before you post to double check that things look how you expect. This tool attempts to emulate what a post looks like but it's not perfect
 
-View the [Introduction story](https://chuckdries.github.io/cohost-storybook/?path=/story/welcome-introduction--page) for more information
+View the [Introduction story](https://cohost-storybook.netlify.app/?path=/story/welcome-introduction--page) for more information
 
 ### Contributing stories
 0. Don't forget to leave your @ in the comment at the top of any stories you add or modify (if you want to)

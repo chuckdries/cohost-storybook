@@ -34,17 +34,27 @@ const Post = (props: StoryTemplateProps) => (
       >
         POSTING
       </h1>
-      <h1 style={{ ...h1Style, transform: "rotate(-5deg)", left: "4rem" }}>
+      <h1
+        style={{
+          ...h1Style,
+          transform: "rotate(-5deg)",
+          left: "4rem",
+        }}
+      >
         TOOL
       </h1>
-      <a style={{ alignSelf: "center" }} href="https://cohost-storybook.netlify.app/">
+      <a
+        style={{ alignSelf: "center" }}
+        href="https://cohost-storybook.netlify.app/"
+      >
         <h2
           style={{
             border: "3px solid cadetblue",
             padding: "1em",
+            fontStyle: "italic",
             display: "inline-block",
-            textDecoration: 'underline',
-            textDecorationColor: 'cadetblue'
+            textDecoration: "underline",
+            textDecorationColor: "cadetblue",
           }}
         >
           Discover the IDE for chosts

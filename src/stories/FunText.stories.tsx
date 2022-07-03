@@ -3,7 +3,7 @@ import { CSSProperties } from "react";
 import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";
 
 const h1Style: CSSProperties = {
-  fontSize: "6em",
+  fontSize: "min(15vw, 6rem)",
   margin: 0,
   position: "relative",
 };
@@ -38,7 +38,7 @@ const Post = (props: StoryTemplateProps) => (
         style={{
           ...h1Style,
           transform: "rotate(-5deg)",
-          left: "4rem",
+          left: "min(4rem, 5vw)",
         }}
       >
         TOOL

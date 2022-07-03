@@ -1,10 +1,10 @@
 // early iteration of a post by https://cohost.org/ror
 
-import { ComponentMeta } from "@storybook/react";
-import StoryTemplate from "../StoryTemplate";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";
 
-const CarouselOne = () => (
-  <StoryTemplate>
+const Carousel = (props: StoryTemplateProps) => (
+  <StoryTemplate {...props}>
     <div
       id="book"
       style={{ overflowX: "scroll", overflowY: "hidden", whiteSpace: "nowrap" }}
@@ -99,7 +99,20 @@ const CarouselOne = () => (
 
 export default {
   title: "Posts/Carousel 1 (@ror's photozine 2)",
-  component: CarouselOne,
-} as ComponentMeta<typeof CarouselOne>;
+  component: Carousel,
+  argTypes: {
+    wrapWithPosts: {
+      name: "Wrap with posts",
+      type: "boolean",
+      defaultValue: true,
+    },
+  },
+} as ComponentMeta<typeof Carousel>;
 
-export const Primary = () => <CarouselOne />;
+const Template: ComponentStory<typeof Carousel> = (args) => (
+  <Carousel {...args} />
+);
+
+export const Primary = Template.bind({});
+Primary.args = {}
+

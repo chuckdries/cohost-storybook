@@ -1,8 +1,8 @@
-import { ComponentMeta } from "@storybook/react";
-import StoryTemplate from "../StoryTemplate";
+import { ComponentMeta, ComponentStory } from "@storybook/react";
+import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";
 
-const Waterfall = () => (
-  <StoryTemplate>
+const Waterfall = (props: StoryTemplateProps) => (
+  <StoryTemplate {...props}>
     <div
       id="post" // set an ID to make it easy to find in the devtools
       style={{
@@ -29,6 +29,18 @@ const Waterfall = () => (
 export default {
   title: "Posts/Waterfall",
   component: Waterfall,
+  argTypes: {
+    wrapWithPosts: {
+      name: "Wrap with posts",
+      type: "boolean",
+      defaultValue: true,
+    },
+  },
 } as ComponentMeta<typeof Waterfall>;
 
-export const Primary = () => <Waterfall />;
+const Template: ComponentStory<typeof Waterfall> = (args) => (
+  <Waterfall {...args} />
+);
+
+export const Primary = Template.bind({});
+Primary.args = {}

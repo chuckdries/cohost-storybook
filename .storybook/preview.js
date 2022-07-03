@@ -1,8 +1,8 @@
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
-  options: {
-    showPanel: false,
-  },
+  // options: {
+  //   showPanel: false,
+  // },
   controls: {
     matchers: {
       color: /(background|color)$/i,

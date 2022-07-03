@@ -9,7 +9,6 @@ module.exports = {
       },
     },
     // "@storybook/addon-interactions",
-    "storybook-dark-mode",
     "@storybook/addon-storysource",
   ],
   framework: "@storybook/react",

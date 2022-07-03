@@ -1,3 +1,5 @@
+import { themes } from '@storybook/theming';
+
 export const parameters = {
   layout: "fullscreen",
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -18,5 +20,8 @@ export const parameters = {
     "storybook/docs/panel": {
       hidden: true,
     },
+  },
+  docs: {
+    theme: themes.dark,
   },
 };

@@ -1,5 +1,7 @@
 # Cohost Storybook
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/06523df2-75ef-4f3d-bd41-1392b1560b95/deploy-status)](https://app.netlify.com/sites/cohost-storybook/deploys)
+
 A storybook of posts for [cohost!](https://cohost.org), a social network that allows inline styling (and is cool for a number of other reasons !!)
 
 ## Usage

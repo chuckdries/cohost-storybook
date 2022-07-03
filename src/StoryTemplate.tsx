@@ -1,10 +1,9 @@
 import {
-  cloneElement,
   JSXElementConstructor,
   ReactElement,
-  RefObject,
-  useRef,
 } from "react";
+import * as ReactDOMServer from 'react-dom/server';
+
 import AceEditor from "react-ace";
 import prettier from "prettier/standalone";
 import parserHTML from "prettier/parser-html";
@@ -22,21 +21,15 @@ export interface StoryTemplateProps {
 }
 
 const StoryTemplate = ({
-  children: _children,
+  children,
   wrapWithPosts,
   showHTML,
 }: StoryTemplateProps & {
   children: ReactElement<any, string | JSXElementConstructor<any>>;
 }) => {
-  const postRef = useRef() as RefObject<HTMLDivElement>;
   if (showHTML) {
     return (
       <div className="bg-notblack text-white">
-        {(!postRef.current || postRef.current?.outerHTML.length == 0) && (
-          <p className="p-2">
-            if this is blank, flip the "show HTML" switch off then on again
-          </p>
-        )}
         <AceEditor
           readOnly
           maxLines={Infinity}
@@ -45,7 +38,7 @@ const StoryTemplate = ({
           wrapEnabled
           theme="dracula"
           tabSize={2}
-          value={prettier.format(postRef.current?.outerHTML ?? "", {
+          value={prettier.format(ReactDOMServer.renderToString(children), {
             parser: "html",
             plugins: [parserHTML],
           })}
@@ -54,7 +47,6 @@ const StoryTemplate = ({
     );
   }
 
-  const children = cloneElement(_children, { ref: postRef });
   return (
     <div className="min-h-full flex flex-col bg-notblack">
       <div className="container mx-auto py-12">

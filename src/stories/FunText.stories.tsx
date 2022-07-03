@@ -1,3 +1,5 @@
+// story added by @chuck, modified by @chuck
+// original post: https://cohost.org/chuck/post/30572-div-style-width-10
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { CSSProperties } from "react";
 import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";

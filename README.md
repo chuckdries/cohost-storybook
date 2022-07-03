@@ -29,6 +29,7 @@ yarn storybook
 View the [Introduction story](https://chuckdries.github.io/cohost-storybook/?path=/story/welcome-introduction--page) for more information
 
 ### Contributing stories
+0. Don't forget to leave your @ in the comment at the top of any stories you add or modify (if you want to)
 1. Fork this repo
 2. Push your work to a branch on your fork
 3. Open a PR

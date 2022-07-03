@@ -1,3 +1,5 @@
+// story added by @chuck, modified by @chuck
+// original post: https://cohost.org/ror/post/22694-div-style-ove & https://cohost.org/ror/post/23575-div-id-book-style
 import { ComponentMeta, ComponentStory } from "@storybook/react";
 import { CSSProperties } from "react";
 import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";

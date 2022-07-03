@@ -30,12 +30,13 @@ View the [Introduction story](https://chuckdries.github.io/cohost-storybook/?pat
 ## Todo
 - [ ] more stories!
 - [ ] a more convenient way to copy the rendered HTML from the post than devtools
-- [ ] improve `Post`
+- improve `Post`
   - [ ] implement large breakpoint preview (profile pics to left of post)
-- [ ] improve `StoryTemplate`
+- improve `StoryTemplate`
+  - [ ] ability to hide the top and bottom space filler posts
   - [ ] ancillary UI like top nav, sidebars
   - [ ] more precise copy of width/sizing behavior (will want to poke at live site's responsive strategy)(maybe belongs in `Post`?)
-- [ ] improve tailwind config/`index.css`
+- improve tailwind config/`index.css`
   - [ ] `mask` and related classes (`mask-squircle` etc)
   - [ ] reverse engineer spacing and typography settings?
   - [ ] copy colors into config (implement their technique of defining the rgb values as CSS custom properties and reading them with `rgb(var())` in the tailwind config)

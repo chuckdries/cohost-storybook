@@ -1,95 +1,106 @@
-// early iteration of a post by https://cohost.org/ror
-
 import { ComponentMeta, ComponentStory } from "@storybook/react";
+import { CSSProperties } from "react";
 import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";
+
+const aspectRatio = "1";
+const border = "3px solid #000";
+
+const cardStyle: CSSProperties = {
+  aspectRatio,
+  flexShrink: 0,
+  width: "100%",
+};
+
+const flexContainer: CSSProperties = {
+  display: "flex",
+  justifyContent: "center",
+  alignItems: "center",
+};
+
+const imageCardStyle: CSSProperties = {
+  ...cardStyle,
+  ...flexContainer,
+  padding: "2em",
+};
+
+const imageStyle: CSSProperties = {
+  objectFit: "contain",
+  border,
+};
 
 const Carousel = (props: StoryTemplateProps) => (
   <StoryTemplate {...props}>
     <div
-      id="book"
-      style={{ overflowX: "scroll", overflowY: "hidden", whiteSpace: "nowrap" }}
+      id="post"
+      style={{
+        overflowX: "scroll",
+        overflowY: "hidden",
+        display: "flex",
+        flexWrap: "nowrap",
+        gap: "1em",
+      }}
     >
       <div
         id="front-cover"
         style={{
-          display: "inline-flex",
-          verticalAlign: "top",
-          width: "100%",
-          marginTop: "2em",
-          aspectRatio: "0.81625",
-          justifyContent: "center",
-          alignItems: "center",
-          border: "3px solid #000",
-          backgroundColor: "rgba(170,195,190,255)",
+          ...cardStyle,
+          ...flexContainer,
+          color: "#aaa",
+          background:
+            "url('https://staging.cohostcdn.org/attachment/630ec554-2a19-4e6d-bd1d-c21f9ada1b90/DSC00373-2.jpg')",
+          backgroundPosition: "center center",
+          backgroundSize: "cover",
+          border,
         }}
       >
         <div>
-          <b>Tiny Photozine</b>
-          <p>Issue 2</p>
+          <b>Beach Blues</b>
         </div>
       </div>
-      <div id="image-1" style={{ display: "inline-block" }}>
+      <div style={{ ...imageCardStyle }}>
         <img
-          src="https://cohost.org/api/v1/attachments/7464384d-6bb2-49fe-8b99-bea9a599b34c"
-          style={{ border: "3px solid #000" }}
+          src="https://staging.cohostcdn.org/attachment/a2e1ad15-52d0-41f2-8be5-7e64f0664e20/DSC00345.jpg"
+          style={{ ...imageStyle }}
+        />
+      </div>
+      <div style={{ ...imageCardStyle }}>
+        <img
+          src="https://staging.cohostcdn.org/attachment/4c1f91e5-aa5f-4bcd-8e00-1e0cc341c774/DSC00394.jpg"
+          style={{ ...imageStyle }}
+        />
+      </div>
+      <div style={{ ...imageCardStyle }}>
+        <img
+          src="https://staging.cohostcdn.org/attachment/33b45c24-af2d-492f-bd42-e8538c1ded63/DSC00310.jpg"
+          style={{ ...imageStyle }}
         />
       </div>
       <div
         style={{
-          display: "inline-block",
-          verticalAlign: "top",
-          width: "100%",
-          aspectRatio: "0.81625",
-          marginTop: "2em",
-          border: "3px solid #000",
+          ...cardStyle,
+          border,
           backgroundColor: "#faf7f3",
         }}
-      ></div>
-      <div id="image-2" style={{ display: "inline-block" }}>
-        <img
-          src="https://cohost.org/api/v1/attachments/d4cb8863-b702-454e-ab2f-b6decdffce22"
-          style={{ border: "3px solid #000" }}
-        />
+      >
+        {/* blank page */}
       </div>
-      <div id="image-3" style={{ display: "inline-block" }}>
-        <img
-          src="https://cohost.org/api/v1/attachments/d4bd5195-5d68-4370-9707-e61a4fb4529c"
-          style={{ border: "3px solid #000" }}
-        />
-      </div>
-      <div
-        style={{
-          display: "inline-block",
-          verticalAlign: "top",
-          width: "100%",
-          aspectRatio: "0.81625",
-          marginTop: "2em",
-          border: "3px solid #000",
-          backgroundColor: "#faf7f3",
-        }}
-      ></div>
       <div
         id="back-cover"
         style={{
-          display: "inline-flex",
-          verticalAlign: "top",
-          width: "100%",
-          aspectRatio: "0.81625",
-          marginTop: "2em",
-          justifyContent: "center",
-          alignItems: "center",
-          border: "3px solid #000",
+          ...cardStyle,
+          ...flexContainer,
+          border,
           backgroundColor: "rgba(170,195,190,255)",
         }}
       >
         <div>
           <b>
-            <a href="https://cohost.org/ror">@ror</a>
+            <a href="https://cohost.org/chuck">@chuck</a>
           </b>
           <br />
           <br />
           <i>
-            <a href="https://kitpatella.com">kitpatella.com</a>
+            <a href="https://chuckdries.com">chuckdries.com</a>
           </i>
         </div>
       </div>
@@ -98,7 +109,7 @@ const Carousel = (props: StoryTemplateProps) => (
 );
 
 export default {
-  title: "Posts/Carousel 1 (@ror's photozine 2)",
+  title: "Posts/Carousel 1",
   component: Carousel,
   argTypes: {
     wrapWithPosts: {
@@ -114,5 +125,4 @@ const Template: ComponentStory<typeof Carousel> = (args) => (
 );
 
 export const Primary = Template.bind({});
-Primary.args = {}
-
+Primary.args = {};

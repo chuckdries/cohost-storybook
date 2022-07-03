@@ -3,9 +3,7 @@ import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";
 
 const Post = (props: StoryTemplateProps) => (
   <StoryTemplate {...props}>
-    {(ref) => (
     <div
-      ref={ref}
       style={{
         margin: "auto",
         height: "500px",
@@ -23,7 +21,7 @@ const Post = (props: StoryTemplateProps) => (
       >
         Waterfall
       </h1>
-    </div>)}
+    </div>
   </StoryTemplate>
 );
 

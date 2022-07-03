@@ -1,4 +1,5 @@
 export const parameters = {
+  layout: "fullscreen",
   actions: { argTypesRegex: "^on[A-Z].*" },
   // options: {
   //   showPanel: false,
@@ -11,10 +12,10 @@ export const parameters = {
   },
   darkMode: {
     // Set the initial theme
-    current: 'dark'
+    current: "dark",
   },
   previewTabs: {
-    'storybook/docs/panel': {
+    "storybook/docs/panel": {
       hidden: true,
     },
   },

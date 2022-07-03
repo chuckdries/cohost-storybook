@@ -3,10 +3,22 @@
 A storybook of posts for [cohost!](https://cohost.org), a social network that allows inline styling (and is cool for a number of other reasons !!)
 
 ## Usage
-0. clone this repo and install yarn if you haven't already: `npm i -g yarn`
-1. install dependencies: `yarn`
-2. start storybook: `yarn storybook`
+0. clone this repo and install yarn if you haven't already: 
+```sh
+git clone https://github.com/chuckdries/cohost-storybook.git
+cd cohost-storybook
+npm i -g yarn
+```
+1. install dependencies: 
+```
+yarn
+```
+2. start storybook: 
+```
+yarn storybook
+```
 3. copy-paste `src/stories/Waterfall.stories.tsx` into a new file inside `src/stories`
+4. Use your browser devtools to copy the rendered HTML (I know I know)
 
 ### Contributing stories
 1. Fork this repo

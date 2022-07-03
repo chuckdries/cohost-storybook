@@ -1,0 +1,28 @@
+import { Meta } from "@storybook/addon-docs";
+import { Description } from '@storybook/addon-docs/blocks';
+
+<Meta title="Welcome/Introduction" />
+
+# Welcome
+
+This is my attempt to set up a development environment for working on cohost posts.
+
+## Dev Workflow
+0. clone this repo and install yarn if you haven't already: 
+```sh
+git clone https://github.com/chuckdries/cohost-storybook.git
+cd cohost-storybook
+npm i -g yarn
+```
+1. install dependencies: 
+```
+yarn
+```
+2. start storybook: 
+```
+yarn storybook
+```
+3. copy-paste `src/stories/Waterfall.stories.tsx` into a new file inside `src/stories`
+4. Use your browser devtools to copy the rendered HTML (I know I know)
+
+See the repo at https://github.com/chuckdries/cohost-storybook for more documentation.

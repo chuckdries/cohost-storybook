@@ -17,7 +17,7 @@ yarn
 ```
 yarn storybook
 ```
-3. copy-paste `src/stories/Waterfall.stories.tsx` into a new file inside `src/stories`
+3. copy-paste `src/stories/Waterfall.stories.tsx` into a new file ending in `.stories.tsx` inside `src/stories`
 4. Use your browser devtools to copy the rendered HTML (I know I know)
 
 View the [Introduction story](https://chuckdries.github.io/cohost-storybook/?path=/story/welcome-introduction--page) for more information

@@ -109,7 +109,7 @@ const Post = (props: StoryTemplateProps) => (
 );
 
 export default {
-  title: "Posts/Carousel 1",
+  title: "Posts/Carousel 1 (Beach Blues)",
   component: Post,
   argTypes: {
     wrapWithPosts: {

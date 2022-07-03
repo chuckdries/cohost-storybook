@@ -26,7 +26,7 @@ const Waterfall = () => (
 );
 
 export default {
-  title: "Waterfall",
+  title: "Posts/Waterfall",
   component: Waterfall,
 } as ComponentMeta<typeof Waterfall>;
 

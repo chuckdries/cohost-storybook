@@ -11,7 +11,8 @@ const Post = ({
       <header className="flex w-full flex-row items-center justify-between rounded-t-lg bg-notWhite p-3">
         <div className="flex w-full flex-row items-center gap-2">
           <div className="flex flex-1 flex-row flex-wrap items-center gap-2 leading-none">
-            <div className="flex-0 mask relative aspect-square h-8 w-8 lg:hidden">
+            {/* I removed lg:hidden from below. TODO: add back when we get large breakpoint implemented */}
+            <div className="flex-0 mask relative aspect-square h-8 w-8">
               <img
                 src="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
                 className="mask mask-squircle h-full w-full object-cover"

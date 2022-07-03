@@ -28,7 +28,7 @@ const imageStyle: CSSProperties = {
   border,
 };
 
-const Carousel = (props: StoryTemplateProps) => (
+const Post = (props: StoryTemplateProps) => (
   <StoryTemplate {...props}>
     <div
       id="post"
@@ -110,7 +110,7 @@ const Carousel = (props: StoryTemplateProps) => (
 
 export default {
   title: "Posts/Carousel 1",
-  component: Carousel,
+  component: Post,
   argTypes: {
     wrapWithPosts: {
       name: "Wrap with posts",
@@ -118,10 +118,10 @@ export default {
       defaultValue: true,
     },
   },
-} as ComponentMeta<typeof Carousel>;
+} as ComponentMeta<typeof Post>;
 
-const Template: ComponentStory<typeof Carousel> = (args) => (
-  <Carousel {...args} />
+const Template: ComponentStory<typeof Post> = (args) => (
+  <Post {...args} />
 );
 
 export const Primary = Template.bind({});

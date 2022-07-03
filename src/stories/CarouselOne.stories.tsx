@@ -4,6 +4,7 @@ import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";
 
 const aspectRatio = "1";
 const border = "3px solid #000";
+const color = "#aaa";
 
 const cardStyle: CSSProperties = {
   aspectRatio,
@@ -28,6 +29,10 @@ const imageStyle: CSSProperties = {
   border,
 };
 
+const linkStyle = {
+  color,
+}
+
 const Post = (props: StoryTemplateProps) => (
   <StoryTemplate {...props}>
     <div
@@ -44,7 +49,6 @@ const Post = (props: StoryTemplateProps) => (
         style={{
           ...cardStyle,
           ...flexContainer,
-          color: "#aaa",
           background:
             "url('https://staging.cohostcdn.org/attachment/630ec554-2a19-4e6d-bd1d-c21f9ada1b90/DSC00373-2.jpg')",
           backgroundPosition: "center center",
@@ -52,9 +56,7 @@ const Post = (props: StoryTemplateProps) => (
           border,
         }}
       >
-        <div>
-          <b>Beach Blues</b>
-        </div>
+        <h1 style={{ color }}>Beach Blues</h1>
       </div>
       <div style={{ ...imageCardStyle }}>
         <img
@@ -74,33 +76,48 @@ const Post = (props: StoryTemplateProps) => (
           style={{ ...imageStyle }}
         />
       </div>
-      <div
+      {/* <div
         style={{
           ...cardStyle,
           border,
           backgroundColor: "#faf7f3",
         }}
       >
-        {/* blank page */}
-      </div>
+      </div> */}
       <div
         id="back-cover"
         style={{
           ...cardStyle,
           ...flexContainer,
           border,
-          backgroundColor: "rgba(170,195,190,255)",
+          color,
+          backgroundColor: "#17182b",
         }}
       >
         <div>
-          <b>
-            <a href="https://cohost.org/chuck">@chuck</a>
-          </b>
-          <br />
-          <br />
-          <i>
-            <a href="https://chuckdries.com">chuckdries.com</a>
-          </i>
+          <p>
+            <a style={linkStyle} href="https://cohost.org/chuck">
+              @chuck
+            </a>
+          </p>
+          <p>
+            wallpaper downloads available on <a style={linkStyle} href="https://chuckdries.com">
+              chuckdries.com
+            </a>
+          </p>
+          <p>
+            special thanks to{" "}
+            <a style={linkStyle} href="https://cohost.org/ror">
+              @ror
+            </a>{" "}
+            for pioneering the format
+          </p>
+          <p>
+            This post was built with the{" "}
+            <a style={linkStyle} href="https://cohost-storybook.netlify.app/">
+              cohost storybook
+            </a>
+          </p>
         </div>
       </div>
     </div>

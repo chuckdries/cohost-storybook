@@ -26,7 +26,7 @@ yarn storybook
 5. Use the "Show HTML" switch in the "controls" panel to grab the generated HTML for your post!
 6. I recommend saving as a draft before you post to double check that things look how you expect. This tool attempts to emulate what a post looks like but it's not perfect
 
-View the [Introduction story](https://chuckdries.github.io/cohost-storybook/?path=/story/welcome-introduction--page) for more information
+View the [Introduction story](https://cohost-storybook.netlify.app/?path=/story/welcome-introduction--page) for more information
 
 ### Contributing stories
 0. Don't forget to leave your @ in the comment at the top of any stories you add or modify (if you want to)
@@ -44,6 +44,7 @@ View the [Introduction story](https://chuckdries.github.io/cohost-storybook/?pat
   - [ ] ability to hide the top and bottom space filler posts
   - [ ] ancillary UI like top nav, sidebars (in progress - added top nav)
   - [ ] more precise copy of width/sizing behavior (will want to poke at live site's responsive strategy)(maybe belongs in `Post`?)
+  - [ ] roughly center posts (best to follow site's behavior but exactly center or whatever we can pull off should be good enough)
 - [ ] improve tailwind config/`index.css`
   - [x] `mask` and related classes (`mask-squircle` etc)
   - [ ] reverse engineer spacing and typography settings?

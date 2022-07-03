@@ -39,7 +39,7 @@ const Post = (props: StoryTemplateProps) => (
 );
 
 export default {
-  title: "Posts/Waterfall", // <--- EDIT THIS
+  title: "Posts/Fixed Background", // <--- EDIT THIS
   component: Post,
   argTypes: {
     wrapWithPosts: {
@@ -57,5 +57,6 @@ export default {
 
 const Template: ComponentStory<typeof Post> = (args) => <Post {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Story = Template.bind({});
+Story.args = {}
+Story.storyName = "Waterfall"  // <--- EDIT THIS

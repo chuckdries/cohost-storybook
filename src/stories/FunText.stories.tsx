@@ -85,5 +85,6 @@ export default {
 
 const Template: ComponentStory<typeof Post> = (args) => <Post {...args} />;
 
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Story = Template.bind({});
+Story.args = {};
+Story.storyName = "Ultimate Posting Tool"

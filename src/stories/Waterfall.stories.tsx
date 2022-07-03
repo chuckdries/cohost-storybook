@@ -36,7 +36,7 @@ export default {
     wrapWithPosts: {
       name: "Wrap with posts",
       type: "boolean",
-      defaultValue: true,
+      defaultValue: true, // <-- maybe edit this, depending on if your post needs scrolling. Can also be toggled in the controls panel by the user
     },
     showHTML: {
       name: "Show HTML",

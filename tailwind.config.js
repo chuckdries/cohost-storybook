@@ -1,12 +1,135 @@
 /** @type {import('tailwindcss').Config} */
+
+function withOpacityValue(variable) {
+  return ({ opacityValue }) => {
+    if (opacityValue === undefined) {
+      return `rgb(var(${variable}))`;
+    }
+    return `rgb(var(${variable}) / ${opacityValue})`;
+  };
+}
+
 module.exports = {
   content: ["./src/**/*.tsx"],
   theme: {
     extend: {
       colors: {
-        notblack: "rgb(25, 25, 25)",
-        foreground: "rgb(131, 37, 79)",
-        text: "rgb(255, 249, 242)",
+        text: withOpacityValue("--color-text"),
+        accent: withOpacityValue("--color-accent"),
+        secondary: {
+          200: withOpacityValue("--color-secondary-200"),
+          300: withOpacityValue("--color-secondary-300"),
+          400: withOpacityValue("--color-secondary-400"),
+          500: withOpacityValue("--color-secondary-500"),
+          600: withOpacityValue("--color-secondary-600"),
+          700: withOpacityValue("--color-secondary-700"),
+          DEFAULT: withOpacityValue("--color-secondary"),
+        },
+        foreground: {
+          200: withOpacityValue("--color-foreground-200"),
+          300: withOpacityValue("--color-foreground-300"),
+          400: withOpacityValue("--color-foreground-400"),
+          500: withOpacityValue("--color-foreground"),
+          600: withOpacityValue("--color-foreground-600"),
+          700: withOpacityValue("--color-foreground-700"),
+          DEFAULT: withOpacityValue("--color-foreground"),
+        },
+        bgText: withOpacityValue("--color-bg-text"),
+        background: withOpacityValue("--color-background"),
+        sidebarBg: withOpacityValue("--color-sidebar-bg"),
+        sidebarText: withOpacityValue("--color-sidebar-text"),
+        sidebarAccent: withOpacityValue("--color-sidebar-accent"),
+        composeButton: {
+          DEFAULT: withOpacityValue("--color-compose-button"),
+          500: withOpacityValue("--color-compose-button"),
+          400: withOpacityValue("--color-compose-button-400"),
+          600: withOpacityValue("--color-compose-button-600"),
+        },
+        longan: {
+          100: "#FFF1DF",
+          200: "#FFE5C4",
+          300: "#FFD8A8",
+          400: "#FFCA7A",
+          500: "#DFA44E",
+          600: "#B7853D",
+          700: "#845E26",
+          800: "#573707",
+          900: "#281800",
+          DEFAULT: "#FFD8A8",
+        },
+        mango: {
+          100: "#FFE8D4",
+          200: "#FFD0AC",
+          300: "#FFBF83",
+          400: "#FFAB5C",
+          500: "#E58F3E",
+          600: "#BC6D28",
+          700: "#934A15",
+          800: "#673104",
+          900: "#281400",
+          DEFAULT: "#FFAB5C",
+        },
+        strawberry: {
+          100: "#FAD8D6",
+          200: "#F4BBBB",
+          300: "#EE999B",
+          400: "#E56B6F",
+          500: "#D54A50",
+          600: "#A42A2F",
+          700: "#7B1B1F",
+          800: "#52070A",
+          900: "#310004",
+          DEFAULT: "#E56B6F",
+        },
+        cherry: {
+          100: "#FDCEE0",
+          200: "#EEADC7",
+          300: "#D3749B",
+          400: "#AE4473",
+          500: "#83254F",
+          600: "#671A3D",
+          700: "#51112E",
+          800: "#3B0920",
+          900: "#220010",
+          DEFAULT: "#83254F",
+        },
+        gray: {
+          100: "#FFF9F2",
+          200: "#DED9D3",
+          300: "#BFBAB5",
+          400: "#A09C98",
+          500: "#827F7C",
+          600: "#686664",
+          700: "#4A4847",
+          800: "#2E2D2C",
+          900: "#191919",
+          DEFAULT: "#191919",
+        },
+        notWhite: "#fff9f2",
+        notBlack: "#191919",
+        green: {
+          DEFAULT: "#319D35",
+          100: "#E2F6D0",
+          200: "#B2DDA6",
+          300: "#82C67B",
+          400: "#4BAC4A",
+          500: "#319D35",
+          600: "#1F7622",
+          700: "#175919",
+          800: "#0E3B10",
+          900: "#061E07",
+        },
+        red: {
+          DEFAULT: "#FF4949",
+          200: "#FFB3AD",
+          300: "#FF8E8A",
+          400: "#FF6C6A",
+          500: "#FF4949",
+          600: "#CC3A3A",
+          700: "#992C2C",
+          800: "#661D1D",
+          900: "#330F0F",
+        },
       },
       fontFamily: {
         sans: [

@@ -4,7 +4,16 @@ import { ComponentMeta, ComponentStory } from "@storybook/react";
 import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";
 
 const Post = (props: StoryTemplateProps) => (
-  <StoryTemplate {...props}>
+  <StoryTemplate
+    // required props
+    {...props}
+    // Optional metadata props - if omitted, post appears as from chuck
+    creatorHandle="chuck"
+    creatorDisplayName="chuck"
+    creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+    creatorProfilePicMask="mask-squircle" // also valid: 'mask-roundrect' and 'mask-circle'
+    originalPostHref="https://cohost.org/chuck/post/23133-div-style-margin"
+  >
     {/* ----EDIT BELOW HERE---- */}
     <div
       style={{
@@ -46,9 +55,7 @@ export default {
   },
 } as ComponentMeta<typeof Post>;
 
-const Template: ComponentStory<typeof Post> = (args) => (
-  <Post {...args} />
-);
+const Template: ComponentStory<typeof Post> = (args) => <Post {...args} />;
 
 export const Primary = Template.bind({});
-Primary.args = {}
+Primary.args = {};

@@ -162,3 +162,15 @@
   --color-compose-button-400: var(--color-foreground-400);
   --color-compose-button-600: var(--color-foreground-600);
 }
+
+/* https://github.com/chuckdries/cohost-storybook/pull/3#issuecomment-1173139347 */
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(-25%);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  50% {
+    transform: translateY(0);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+}

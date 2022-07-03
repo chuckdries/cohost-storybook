@@ -8,17 +8,31 @@ import {
   HeartIcon,
 } from "@heroicons/react/outline";
 
+export type MaskTypes = 'mask-squircle' | 'mask-circle' | 'mask-roundrect';
+
 interface PostProps {
   children: ReactNode;
+  creatorHandle: string;
+  creatorDisplayName: string;
+  creatorProfilePicUrl: string;
+  creatorProfilePicMask: MaskTypes;
+  originalPostHref: string;
 }
-const Post = ({ children }: PostProps) => {
+const Post = ({
+  children,
+  creatorHandle,
+  creatorDisplayName,
+  creatorProfilePicUrl,
+  creatorProfilePicMask,
+  originalPostHref,
+}: PostProps) => {
   return (
     <div className="grid lg:grid-cols-[4rem_1fr] gap-x-6 gap-y-2 w-full">
       <div className="flex-0 mask relative aspect-square h-16 w-16 hidden lg:block">
         <img
-          src="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
-          className="mask mask-squircle h-full w-full object-cover"
-          alt="chuck"
+          src={creatorProfilePicUrl}
+          className={`mask ${creatorProfilePicMask} h-full w-full object-cover`}
+          alt={creatorDisplayName}
         />
       </div>
       <article className="cohost-shadow-light dark:cohost-shadow-dark w-full overflow-x-auto rounded-lg bg-white lg:max-w-prose">
@@ -27,23 +41,23 @@ const Post = ({ children }: PostProps) => {
             <div className="flex flex-1 flex-row flex-wrap items-center gap-2 leading-none">
               <div className="flex-0 mask relative aspect-square h-8 w-8 lg:hidden">
                 <img
-                  src="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
-                  className="mask mask-squircle h-full w-full object-cover"
-                  alt="chuck"
+                  src={creatorProfilePicUrl}
+                  className={`mask ${creatorProfilePicMask} h-full w-full object-cover`}
+                  alt={creatorDisplayName}
                 />
               </div>
               <a
                 rel="author"
-                href="https://cohost.org/chuck"
+                href={`https://cohost.org/${creatorHandle}`}
                 className="block max-w-full flex-shrink truncate font-atkinson font-bold text-notBlack hover:underline"
               >
-                Chuck
+                {creatorDisplayName}
               </a>
               <a
-                href="https://cohost.org/chuck"
+                href={`https://cohost.org/${creatorHandle}`}
                 className="block font-atkinson font-normal text-gray-600 hover:underline"
               >
-                @chuck
+                @{creatorHandle}
               </a>
               <time
                 // datetime="2022-06-30T21:10:28.174-07:00"
@@ -51,7 +65,7 @@ const Post = ({ children }: PostProps) => {
                 title="Thu, Jun 30, 2022, 9:10 PM"
               >
                 <a
-                  href="https://cohost.org/chuck/post/23133-div-style-margin"
+                  href={originalPostHref}
                   className="hover:underline"
                 >
                   2 days ago
@@ -95,10 +109,10 @@ const Post = ({ children }: PostProps) => {
           <div className="flex justify-between align-middle">
             <div className="w-max flex-none">
               <a
-                href="https://cohost.org/chuck/post/23133-div-style-margin"
+                href={originalPostHref}
                 className="text-sm leading-none text-gray-400 hover:underline"
               >
-                12 comments
+                N comments
               </a>
             </div>
             <div className="flex justify-end gap-3 bg-notWhite">
@@ -155,8 +169,8 @@ const Post = ({ children }: PostProps) => {
                 <PencilAltIcon />
               </a>
               <a
-                href="https://cohost.org/chuck/post/compose?shareOf=23133"
-                title="share this post as chuck"
+                href="#"
+                title="share this post"
               >
                 <RefreshIcon className="h-6 w-6 text-notBlack" />
               </a>

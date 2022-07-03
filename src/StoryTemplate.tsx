@@ -9,12 +9,17 @@ import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/theme-dracula";
 import "ace-builds/src-noconflict/ext-language_tools";
 
-import Post from "./Post";
+import Post, { MaskTypes } from "./Post";
 import "./index.css";
 
 export interface StoryTemplateProps {
   wrapWithPosts: boolean;
   showHTML: boolean;
+  creatorHandle?: string;
+  creatorDisplayName?: string;
+  creatorProfilePicUrl?: string;
+  creatorProfilePicMask?: MaskTypes;
+  originalPostHref?: string;
 }
 
 const TakeUpSpacePost = () => (
@@ -34,6 +39,11 @@ const StoryTemplate = ({
   children,
   wrapWithPosts,
   showHTML,
+  creatorHandle,
+  creatorDisplayName,
+  creatorProfilePicUrl,
+  creatorProfilePicMask,
+  originalPostHref,
 }: StoryTemplateProps & {
   children: ReactNode;
 }) => {
@@ -168,13 +178,36 @@ const StoryTemplate = ({
         {/* items-center and my-16 and gap-4 added by me (I don't remember where I copy-pasted this from) */}
         <div className="col-span-1 flex flex-col gap-4 lg:col-span-2 items-center my-16">
           {wrapWithPosts && (
-            <Post>
+            <Post
+              creatorDisplayName="Chuck"
+              creatorHandle="chuck"
+              creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+              creatorProfilePicMask="mask-squircle"
+              originalPostHref="#"
+            >
               <TakeUpSpacePost />
             </Post>
           )}
-          <Post>{children}</Post>
+          <Post
+            creatorHandle={creatorHandle || "chuck"}
+            creatorDisplayName={creatorDisplayName || "Chuck"}
+            creatorProfilePicUrl={
+              creatorProfilePicUrl ||
+              "https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+            }
+            creatorProfilePicMask={creatorProfilePicMask || ('mask-squircle' as 'mask-squircle')}
+            originalPostHref={originalPostHref || "#"}
+          >
+            {children}
+          </Post>
           {wrapWithPosts && (
-            <Post>
+            <Post
+              creatorDisplayName="Chuck"
+              creatorHandle="chuck"
+              creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+              creatorProfilePicMask="mask-squircle"
+              originalPostHref="#"
+            >
               <TakeUpSpacePost />
             </Post>
           )}

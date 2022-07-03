@@ -22,7 +22,7 @@ yarn
 yarn storybook
 ```
 3. copy-paste `src/stories/Waterfall.stories.tsx` into a new file ending in `.stories.tsx` inside `src/stories`
-4. Edit the post, including the `title` under `export default`, and then select your post in the storybook sidebar
+4. Edit the post, including the `title` under `export default` and `storyName` near the bottom, and then select your post in the storybook sidebar
 5. Use the "Show HTML" switch in the "controls" panel to grab the generated HTML for your post!
 6. I recommend saving as a draft before you post to double check that things look how you expect. This tool attempts to emulate what a post looks like but it's not perfect
 
@@ -39,6 +39,7 @@ View the [Introduction story](https://chuckdries.github.io/cohost-storybook/?pat
 - [x] a more convenient way to copy the rendered HTML from the post than devtools  
 - [ ] improve `Post`
   - [x] implement large breakpoint preview (profile pics to left of post)
+  - [x] implement attribution props, so people can put their own name and handle on posts they contribute
 - [ ] improve `StoryTemplate`
   - [ ] ability to hide the top and bottom space filler posts
   - [ ] ancillary UI like top nav, sidebars (in progress - added top nav)

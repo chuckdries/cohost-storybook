@@ -4,6 +4,7 @@ A storybook of posts for [cohost!](https://cohost.org), a social network that al
 
 ## Todo
 - [ ] more stories!
+- [ ] a more convenient way to copy the rendered HTML from the post than devtools
 - [ ] improve `Post`
   - [ ] implement large breakpoint preview (profile pics to left of post)
 - [ ] improve `StoryTemplate`

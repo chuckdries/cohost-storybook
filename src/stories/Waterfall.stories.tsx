@@ -4,6 +4,7 @@ import StoryTemplate from "../StoryTemplate";
 const Waterfall = () => (
   <StoryTemplate>
     <div
+      id="post" // set an ID to make it easy to find in the devtools
       style={{
         margin: "auto",
         height: "500px",

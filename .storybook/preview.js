@@ -6,4 +6,8 @@ export const parameters = {
       date: /Date$/,
     },
   },
-}
+  darkMode: {
+    // Set the initial theme
+    current: 'dark'
+  }
+};

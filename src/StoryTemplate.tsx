@@ -1,4 +1,4 @@
-import { JSXElementConstructor, ReactElement } from "react";
+import { JSXElementConstructor, ReactElement, ReactNode } from "react";
 import * as ReactDOMServer from "react-dom/server";
 
 import AceEditor from "react-ace";
@@ -35,7 +35,7 @@ const StoryTemplate = ({
   wrapWithPosts,
   showHTML,
 }: StoryTemplateProps & {
-  children: ReactElement<any, string | JSXElementConstructor<any>>;
+  children: ReactNode;
 }) => {
   if (showHTML) {
     return (
@@ -61,7 +61,7 @@ const StoryTemplate = ({
           wrapEnabled
           theme="dracula"
           tabSize={2}
-          value={prettier.format(ReactDOMServer.renderToString(children), {
+          value={prettier.format(ReactDOMServer.renderToString(children as ReactElement<any, string | JSXElementConstructor<any>>), {
             parser: "html",
             plugins: [parserHTML],
           })}

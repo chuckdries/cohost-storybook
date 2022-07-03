@@ -44,6 +44,7 @@ View the [Introduction story](https://chuckdries.github.io/cohost-storybook/?pat
   - [ ] ability to hide the top and bottom space filler posts
   - [ ] ancillary UI like top nav, sidebars (in progress - added top nav)
   - [ ] more precise copy of width/sizing behavior (will want to poke at live site's responsive strategy)(maybe belongs in `Post`?)
+  - [ ] roughly center posts (best to follow site's behavior but exactly center or whatever we can pull off should be good enough)
 - [ ] improve tailwind config/`index.css`
   - [x] `mask` and related classes (`mask-squircle` etc)
   - [ ] reverse engineer spacing and typography settings?

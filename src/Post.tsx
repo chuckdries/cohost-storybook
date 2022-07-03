@@ -8,11 +8,14 @@ import {
   HeartIcon,
 } from "@heroicons/react/outline";
 
+export type MaskTypes = 'mask-squircle' | 'mask-circle' | 'mask-roundrect';
+
 interface PostProps {
   children: ReactNode;
   creatorHandle: string;
   creatorDisplayName: string;
-  creatorProfilePicUrl?: string;
+  creatorProfilePicUrl: string;
+  creatorProfilePicMask: MaskTypes;
   originalPostHref: string;
 }
 const Post = ({
@@ -20,6 +23,7 @@ const Post = ({
   creatorHandle,
   creatorDisplayName,
   creatorProfilePicUrl,
+  creatorProfilePicMask,
   originalPostHref,
 }: PostProps) => {
   return (
@@ -27,7 +31,7 @@ const Post = ({
       <div className="flex-0 mask relative aspect-square h-16 w-16 hidden lg:block">
         <img
           src={creatorProfilePicUrl}
-          className="mask mask-squircle h-full w-full object-cover"
+          className={`mask ${creatorProfilePicMask} h-full w-full object-cover`}
           alt={creatorDisplayName}
         />
       </div>
@@ -38,7 +42,7 @@ const Post = ({
               <div className="flex-0 mask relative aspect-square h-8 w-8 lg:hidden">
                 <img
                   src={creatorProfilePicUrl}
-                  className="mask mask-squircle h-full w-full object-cover"
+                  className={`mask ${creatorProfilePicMask} h-full w-full object-cover`}
                   alt={creatorDisplayName}
                 />
               </div>

@@ -5,12 +5,14 @@ import StoryTemplate, { StoryTemplateProps } from "../StoryTemplate";
 
 const Post = (props: StoryTemplateProps) => (
   <StoryTemplate
-    // edit metadata as necessary
+    // required props
+    {...props}
+    // Optional metadata props - if omitted, post appears as from chuck
     creatorHandle="chuck"
     creatorDisplayName="chuck"
     creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+    creatorProfilePicMask="mask-squircle" // also valid: 'mask-roundrect' and 'mask-circle'
     originalPostHref="https://cohost.org/chuck/post/23133-div-style-margin"
-    {...props}
   >
     {/* ----EDIT BELOW HERE---- */}
     <div

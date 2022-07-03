@@ -9,7 +9,7 @@ import "ace-builds/src-noconflict/mode-html";
 import "ace-builds/src-noconflict/theme-dracula";
 import "ace-builds/src-noconflict/ext-language_tools";
 
-import Post from "./Post";
+import Post, { MaskTypes } from "./Post";
 import "./index.css";
 
 export interface StoryTemplateProps {
@@ -18,6 +18,7 @@ export interface StoryTemplateProps {
   creatorHandle?: string;
   creatorDisplayName?: string;
   creatorProfilePicUrl?: string;
+  creatorProfilePicMask?: MaskTypes;
   originalPostHref?: string;
 }
 
@@ -41,6 +42,7 @@ const StoryTemplate = ({
   creatorHandle,
   creatorDisplayName,
   creatorProfilePicUrl,
+  creatorProfilePicMask,
   originalPostHref,
 }: StoryTemplateProps & {
   children: ReactNode;
@@ -180,6 +182,7 @@ const StoryTemplate = ({
               creatorDisplayName="Chuck"
               creatorHandle="chuck"
               creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+              creatorProfilePicMask="mask-squircle"
               originalPostHref="#"
             >
               <TakeUpSpacePost />
@@ -192,6 +195,7 @@ const StoryTemplate = ({
               creatorProfilePicUrl ||
               "https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
             }
+            creatorProfilePicMask={creatorProfilePicMask || ('mask-squircle' as 'mask-squircle')}
             originalPostHref={originalPostHref || "#"}
           >
             {children}
@@ -201,6 +205,7 @@ const StoryTemplate = ({
               creatorDisplayName="Chuck"
               creatorHandle="chuck"
               creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/808-468d977b-f33c-472b-966d-52f2c2ce2c49-profile.jpg"
+              creatorProfilePicMask="mask-squircle"
               originalPostHref="#"
             >
               <TakeUpSpacePost />

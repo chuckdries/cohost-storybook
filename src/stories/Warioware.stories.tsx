@@ -9,6 +9,7 @@ const Post = (props: StoryTemplateProps) => (
     creatorHandle="mog"
     creatorDisplayName="mogery"
     creatorProfilePicUrl="https://staging.cohostcdn.org/avatar/445-a2e958d4-372d-45d8-b037-8175bb78b84e-profile.jpg"
+    creatorProfilePicMask="mask-circle"
     originalPostHref="https://cohost.org/mog/post/15769-details-summary-s"
     {...props}
   >

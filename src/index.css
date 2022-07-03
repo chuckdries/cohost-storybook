@@ -70,7 +70,8 @@
   font-style: italic;
   font-display: swap;
   font-weight: 700;
-  src: url(./resources/Atkinson-Hyperlegible-BoldItalic-102.woff) format("woff2"),
+  src: url(./resources/Atkinson-Hyperlegible-BoldItalic-102.woff)
+      format("woff2"),
     url(./resources/Atkinson-Hyperlegible-BoldItalic-102a.woff2) format("woff");
   /* unicode-range: U+0100-024F, U+0259, U+1E00-1EFF, U+2020, U+20A0-20AB,
     U+20AD-20CF, U+2113, U+2C60-2C7F, U+A720-A7FF; */
@@ -93,3 +94,71 @@
     sans-serif, apple color emoji, segoe ui emoji, segoe ui symbol,
     noto color emoji;
 } */
+
+@layer utilities {
+  .mask {
+    mask-size: contain;
+    mask-repeat: no-repeat;
+    mask-position: center;
+  }
+
+  .mask-squircle {
+    mask-image: url(data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjIwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwIDBDMjAgMCAwIDIwIDAgMTAwczIwIDEwMCAxMDAgMTAwIDEwMC0yMCAxMDAtMTAwUzE4MCAwIDEwMCAweiIvPjwvc3ZnPg==);
+  }
+
+  .mask-roundrect {
+    @apply rounded-lg;
+  }
+
+  .mask-circle {
+    @apply rounded-full;
+  }
+
+  .mask-egg {
+    mask-image: url("../client/images/icons/egg.svg");
+  }
+
+  .mask-capsule-big {
+    mask-image: url("../client/images/icons/capsule-big.svg");
+  }
+
+  .mask-capsule-small {
+    mask-image: url("../client/images/icons/capsule-small.svg");
+  }
+}
+
+:root {
+  --color-notWhite: 255 249 242;
+  --color-notBlack: 25 25 25;
+  --color-cherry: 131 37 79;
+  --color-strawberry: 229 107 111;
+  --color-mango: 255 171 92;
+  --color-longan: 255 216 168;
+
+  --color-text: var(--color-notWhite);
+  --color-bg-text: var(--color-notBlack);
+
+  --color-foreground-200: 238 173 199;
+  --color-foreground-300: 211 116 155;
+  --color-foreground-400: 174 68 115;
+  --color-foreground-600: 103 26 61;
+  --color-foreground-700: 81 17 46;
+  --color-foreground: var(--color-cherry);
+
+  --color-secondary-200: 244 187 187;
+  --color-secondary-300: 238 153 155;
+  --color-secondary-400: 229 107 111;
+  --color-secondary-600: 164 42 47;
+  --color-secondary-700: 123 27 31;
+  --color-secondary: var(--color-strawberry);
+
+  --color-accent: var(--color-mango);
+  --color-background: var(--color-notWhite);
+  --color-sidebar-bg: var(--color-notWhite);
+  --color-sidebar-text: var(--color-notBlack);
+  --color-sidebar-accent: var(--color-cherry);
+
+  --color-compose-button: var(--color-foreground);
+  --color-compose-button-400: var(--color-foreground-400);
+  --color-compose-button-600: var(--color-foreground-600);
+}

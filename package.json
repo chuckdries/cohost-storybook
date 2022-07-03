@@ -13,6 +13,7 @@
     "deploy": "yarn storybook:build && yarn gh-pages"
   },
   "dependencies": {
+    "@heroicons/react": "^1.0.6",
     "gh-pages": "^4.0.0",
     "prettier": "^2.7.1",
     "react": "^18.0.0",

@@ -61,10 +61,15 @@ const StoryTemplate = ({
           wrapEnabled
           theme="dracula"
           tabSize={2}
-          value={prettier.format(ReactDOMServer.renderToString(children as ReactElement<any, string | JSXElementConstructor<any>>), {
-            parser: "html",
-            plugins: [parserHTML],
-          })}
+          value={prettier.format(
+            ReactDOMServer.renderToString(
+              children as ReactElement<any, string | JSXElementConstructor<any>>
+            ),
+            {
+              parser: "html",
+              plugins: [parserHTML],
+            }
+          )}
         />
       </div>
     );

@@ -8,7 +8,7 @@ import {
   HeartIcon,
 } from "@heroicons/react/outline";
 
-export type MaskTypes = 'mask-squircle' | 'mask-circle' | 'mask-roundrect';
+export type MaskTypes = 'mask-squircle' | 'mask-circle' | 'mask-roundrect' | 'mask-egg' | 'mask-capsule-big' | 'mask-capsule-small';
 
 interface PostProps {
   children: ReactNode;
